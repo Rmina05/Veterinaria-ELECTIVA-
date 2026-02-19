@@ -1,0 +1,188 @@
+/* Variables de color */
+:root {
+    --primary-blue: #739ee3;
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --bg-dark-overlay: rgba(0, 0, 0, 0.5);
+    --card-bg: #f7f7f7;
+    --transition-speed: 0.6s;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif; /* Texto general elegante */
+}
+
+/* Hero con parallax */
+.hero {
+    background: url('../img/mi-imagen.jpg') center/cover no-repeat fixed;
+    height: 100vh;
+    position: relative;
+    color: var(--text-light);
+}
+
+.hero .overlay {
+    background-color: var(--bg-dark-overlay);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+nav {
+    position: absolute;
+    top: 20px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    font-size: 2rem;
+    color: var(--text-light);
+    letter-spacing: 2px;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav .nav-links a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav .nav-links a:hover {
+    color: var(--primary-blue);
+    transform: scale(1.1);
+}
+
+/* Hero content */
+.hero-content h2 {
+    font-family: 'Playfair Display', serif; /* Título sofisticado */
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 10px;
+    animation: fadeInDown 1s ease forwards;
+}
+
+.hero-content p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.hero-content .btn {
+    padding: 12px 30px;
+    background-color: var(--primary-blue);
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.hero-content .btn:hover {
+    background-color: #5b82c9;
+    transform: scale(1.05);
+}
+
+/* Animaciones hero */
+@keyframes fadeInDown {
+    from {opacity: 0; transform: translateY(-30px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeInUp {
+    from {opacity: 0; transform: translateY(30px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* Sección de Servicios */
+.servicios {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #ffffff;
+    color: var(--text-dark);
+}
+
+.servicios h2 {
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 15px;
+    width: 300px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    transition: transform 0.4s, box-shadow 0.4s;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+}
+
+.card h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--primary-blue);
+}
+
+.card p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Footer */
+footer {
+    background-color: #333333;
+    color: var(--text-light);
+    text-align: center;
+    padding: 25px;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media(max-width: 768px) {
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+}
