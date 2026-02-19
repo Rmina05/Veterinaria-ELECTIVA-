@@ -29,6 +29,10 @@ Permite a administradores, veterinarios y recepcionistas interactuar en un entor
 
 
 
+
+
+
+
 🛠️ Tecnologías Utilizadas
 
 PHP (backend)
@@ -40,6 +44,7 @@ MySQL (Base de datos)
 XAMPP (Servidor local)
 
 Git y GitHub (Control de versiones)
+
 
 
 
